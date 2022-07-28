@@ -6,7 +6,7 @@ services:
     image: redmine:5
     restart: always
     ports:
-      - 8080:3000
+      - 80:3000
     environment:
       REDMINE_DB_POSTGRES: db
       REDMINE_DB_USERNAME: ${REDMINE_DB_USERNAME}
