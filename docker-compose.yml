@@ -13,6 +13,12 @@ services:
       REDMINE_DB_PASSWORD: ${REDMINE_DB_PASSWORD}
       REDMINE_DB_DATABASE: ${REDMINE_DB_DATABASE}
       REDMINE_PLUGINS_MIGRATE: 1
+    volumes:
+      - ./redmine/files:/usr/src/redmine/files
+      - ./redmine/plugins:/usr/src/redmine/plugins
+      - ./redmine/themes:/usr/src/redmine/public/themes
+    depends_on:
+      - db
 
   db:
     image: postgres:14
